@@ -8,9 +8,12 @@
 <body>
     <div class="b"></div>
 <div class="triangle-one"></div>
+<div class="sector"></div>
+<div class="semicircle"></div>
+<div class="circle"></div>
 </body>
 <style>
-/* 用border绘制三角形  */
+
 /* 实际上，border属性是右三角形组成的，下面看一个例子： */
     .b{
         border: 100px solid;
@@ -18,6 +21,7 @@
         height: 0px;
         border-color: blue red green yellow;
     }
+    /* 用border绘制三角形  */
     .triangle-one{
         margin-top: 30px;
         width: 0;
@@ -25,5 +29,27 @@
         border: 100px solid;
         border-color: red transparent transparent transparent;
     }
+    /* 绘制一个90度的扇形 */
+.sector{
+    margin-top: 30px;
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: red transparent transparent transparent;
+        border-radius: 100px;
+}
+/* 半圆 */
+.semicircle{
+   width: 100px;
+   height: 50px;
+   border-radius: 0 0 100px 100px;
+   background-color: red;
+}
+.circle{
+    background-color: red;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
 </style>
 </html>
