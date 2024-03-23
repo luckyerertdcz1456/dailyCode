@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="b"></div>
+<div class="triangle-one"></div>
+</body>
+<style>
+/* 用border绘制三角形  */
+/* 实际上，border属性是右三角形组成的，下面看一个例子： */
+    .b{
+        border: 100px solid;
+        width: 0px;
+        height: 0px;
+        border-color: blue red green yellow;
+    }
+    .triangle-one{
+        margin-top: 30px;
+        width: 0;
+        height: 0;
+        border: 100px solid;
+        border-color: red transparent transparent transparent;
+    }
+</style>
+</html>
