@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <div>0</div>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <div>11</div>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <div class="decorated">
+        Content
+    </div>
+    <input type="text">
+</body>
+<style>
+    /* 结构伪类选择器 */
+    li:first-child {
+        color: aqua;
+        /* */
+    }
+
+    li:last-child {
+        color: rgb(14, 229, 60);
+    }
+
+    li:nth-child(2n+3) {
+        color: rgb(227, 140, 10);
+    }
+
+    li:nth-of-type(1) {
+        color: blueviolet;
+    }
+
+    div:nth-of-type(2) {
+        color: rgb(231, 9, 9);
+    }
+
+    /* 区别:
+1. nth-child对父元素里面所有孩子排序选择（序号是固定的）先找到第n个孩子，然后看看是否和E匹配
+2. nth-of-type对父元素里面指定子元素进行排序选择。先去匹配E，然后再根据E找第n个孩子
+*/
+    /* 伪元素选择器 */
+    .decorated {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin: 20px;
+        position: relative;
+        /* 为了定位伪元素 */
+    }
+
+    .decorated::before {
+        content: "Before Content ";
+        color: red;
+    }
+
+    .decorated::after {
+        content: " After Content";
+        color: blue;
+    }
+    input[type="text"]::after{
+        content: '--';
+    }
+</style>
+
+</html>
