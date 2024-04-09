@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+<style>
+    .box {
+        width: 800px;
+        height: 400px;
+        
+    }
+</style>
+<script src="./echarts.min.js"></script>
+<script>
+    /* 
+    需要了解的主要配置：series xAxis yAxis grid tooltip title legend color
+
+series
+
+系列列表。每个系列通过 type 决定自己的图表类型
+大白话：图标数据，指定什么类型的图标，可以多个图表重叠。
+xAxis：直角坐标系 grid 中的 x 轴
+
+boundaryGap: 坐标轴两边留白策略 true，这时候刻度只是作为分隔线，标签和数据点都会在两个刻度之间的带(band)中间。
+yAxis：直角坐标系 grid 中的 y 轴
+
+grid：直角坐标系内绘图网格。
+
+title：标题组件
+
+tooltip：提示框组件
+
+legend：图例组件
+
+color：调色盘颜色列表
+
+数据堆叠，同个类目轴上系列配置相同的stack值后 后一个系列的值会在前一个系列的值上相加。
+    */
+    var myChart = echarts.init(document.querySelector(".box"))
+    var option = {
+  title: {
+    text: 'Stacked Line'
+  },
+  //提示框组件
+  tooltip: {
+    //触发方式：坐标轴
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+  },
+  yAxis: {
+    type: 'value'
+  },
+  series: [
+    {
+      name: 'Email',
+      type: 'line',
+      stack: 'Total',
+      data: [120, 132, 101, 134, 90, 230, 210]
+    },
+    {
+      name: 'Union Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [220, 182, 191, 234, 290, 330, 310]
+    },
+    {
+      name: 'Video Ads',
+      type: 'line',
+      stack: 'Total',
+      data: [150, 232, 201, 154, 190, 330, 410]
+    },
+    {
+      name: 'Direct',
+      type: 'line',
+      stack: 'Total',
+      data: [320, 332, 301, 334, 390, 330, 320]
+    },
+    {
+      name: 'Search Engine',
+      type: 'line',
+      stack: 'Total',
+      data: [820, 932, 901, 934, 1290, 1330, 1320]
+    }
+  ]
+};
+
+
+    myChart.setOption(option)
+
+</script>
+
+</html>
