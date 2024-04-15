@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(){
+            this.eyes=2
+            this.head=1
+        }
+
+        console.log(person);
+        person.prototype.sing=function(){
+            console.log('唱歌');
+        }
+        console.log(person.prototype);
+        const girl=new person()
+        console.log(girl.__proto__===person.prototype);
+        console.log(person.prototype.__proto__);
+    </script>
+</body>
+</html>
