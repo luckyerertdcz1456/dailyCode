@@ -12,7 +12,7 @@
             this.head=1
         }
 
-        console.log(person);
+        //console.log(person);
         person.prototype.sing=function(){
             console.log('唱歌');
         }
@@ -20,6 +20,19 @@
         const girl=new person()
         console.log(girl.__proto__===person.prototype);
         console.log(person.prototype.__proto__);
+        console.log(girl.__proto__ === girl.constructor.prototype)
+        console.log(girl.constructor);
+        console.log(girl.constructor.prototype);
+        console.log(girl.__proto__.constructor);//person
+        console.log(person.prototype.__proto__===Object.prototype);//true
+        console.log(Object.prototype.__proto__);//null
+        console.log(girl.prototype);//undefined
+        console.log(Array.prototype.__proto__===Object.prototype);//true
+        for (var i = 1; i <= 5; i++) {
+  setTimeout(function timer() {
+    console.log(i)
+  },  1000)
+}
     </script>
 </body>
 </html>
